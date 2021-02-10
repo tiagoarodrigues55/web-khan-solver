@@ -1,13 +1,17 @@
 import {useState, useEffect} from "react"
 import Styles from '../styles/index'
-import Image from 'next/image'
 import logo from '../assets/logo.jpg'
 import axios from 'axios'
+import ReactWhatsapp from 'react-whatsapp'
 function Home(){
   const [formData, setFormData] = useState({plan: '', name: '', username: '', password: '', school: '', transactionId: ''})
-
   function handleSubmit(event){
     event.preventDefault()
+
+    if(formData.plan === '' ||formData.name === '' ||formData.username === '' ||formData.password === '' ||formData.school === '' ||formData.transactionId === '' ){
+      alert('Preencha todos os campos antes de enviar')
+      return
+    }
     axios.post('/api/subscribe', formData).then(res=>{
       alert('Sua solicitação foi recebida com sucesso!')
     })
@@ -40,11 +44,7 @@ function Home(){
   return(
     <div>
           <Styles>
-          {/* <Image 
-          alt="My Image"
-          width={300}
-          height={300}
-          src={img}/> */}
+       
           <img src={logo} style={{width:"160px",height:"160px"}}/>
       <p>
       Você gostaria de ter suas recomendações do KhanAcademy entregues com 100% no prazo todas as semanas?<br/>
@@ -70,8 +70,12 @@ function Home(){
         *Cotação atual com desconto: R$300.000,00<br/>
         </p>
     <input type="text" onChange={handleTransactionId} placeholder="Id da transação"/> <br/>
-    <button type="submit">Enviar</button>
+    {formData.plan === '' ||formData.name === '' ||formData.username === '' ||formData.password === '' ||formData.school === '' ||formData.transactionId === '' ? null:
+    <ReactWhatsapp  number="+5511992481655" message={`Olá, meu nome é ${formData.name}, gostaria de assinar o plano ${formData.plan}`} >Enviar</ReactWhatsapp>
+    
+    }
   </form>
+
   </Styles>
 
     </div>
