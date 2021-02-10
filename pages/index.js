@@ -8,7 +8,9 @@ function Home(){
 
   function handleSubmit(event){
     event.preventDefault()
-    axios.post('/api/subscribe', formData)
+    axios.post('/api/subscribe', formData).then(res=>{
+      alert('Sua solicitação foi recebida com sucesso!')
+    })
     console.log(formData)
   }
   function handleSelectPlan(event){
