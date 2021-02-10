@@ -2,12 +2,13 @@ import {useState, useEffect} from "react"
 import Styles from '../styles/index'
 import Image from 'next/image'
 import logo from '../assets/logo.jpg'
+import axios from 'axios'
 function Home(){
   const [formData, setFormData] = useState({plan: '', name: '', username: '', password: '', school: '', transactionId: ''})
 
   function handleSubmit(event){
     event.preventDefault()
-    alert(formData)
+    axios.post('/api/subscribe', formData)
     console.log(formData)
   }
   function handleSelectPlan(event){

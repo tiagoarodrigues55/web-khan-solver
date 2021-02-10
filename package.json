@@ -9,11 +9,16 @@
   "author": "Tiago <tiago.americano.03@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.15",
     "next": "^10.0.6",
     "next-images": "^1.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "vercel": "^21.2.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"
