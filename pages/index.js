@@ -66,8 +66,8 @@ function Home(){
         <p>
         Para iniciarmos os processos de resolução é necessário realizar o pagamento, aceitamos:<br/>
         Pix - CPF: 368.637.608-35 <br/>
-        Bitcoin*:<br/>
-        *Cotação atual com desconto: R$300.000,00<br/>
+        {/* Bitcoin*:<br/>
+        *Cotação atual com desconto: R$300.000,00<br/> */}
         </p>
     <input type="text" onChange={handleTransactionId} placeholder="Id da transação"/> <br/>
     {formData.plan === '' ||formData.name === '' ||formData.username === '' ||formData.password === '' ||formData.school === '' ||formData.transactionId === '' ? null:
