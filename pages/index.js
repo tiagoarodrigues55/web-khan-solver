@@ -74,8 +74,9 @@ function Home(){
     <ReactWhatsapp  number="+5511992481655" message={`Olá, meu nome é ${formData.name}, gostaria de assinar o plano ${formData.plan}`} >Enviar</ReactWhatsapp>
     
     }
-  </form>
-
+  
+	<p>Caso assine algum plano, não tente fazer os exercícios! <br/>Pois pode atrapalhar o processo de resolução. Não nos responsabilizamos por exercícios não feitos caso o usuário tenha tentado realizar as recomendações durante o período coberto pelo plano.<br/></p>
+</form>
   </Styles>
 
     </div>

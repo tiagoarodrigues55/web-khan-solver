@@ -14,6 +14,10 @@ form{
 }
 p{
   text-align: center;
+  max-width:700px;
+}
+div{
+text-align: center;
 }
 select{
   width:100%;
